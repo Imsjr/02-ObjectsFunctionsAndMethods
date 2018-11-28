@@ -3,11 +3,11 @@ Practice DEFINING and CALLING
      FUNCTIONS
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Jason Ims  
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
-# TODO: 2.
+# Done: 2.
 #   Allow this module to use the  rosegraphics.py  module by marking the
 #     src
 #   folder in this project as a "Sources Root", as follows:
@@ -21,33 +21,52 @@ import rosegraphics as rg
 
 
 def main():
-    """
-    TESTS the functions that you will write below.
-    You write the tests per the _TODO_s below.
-    """
+    triangle(10,11)
+    Turtle('green',5)
+    Turtle('blue',10)
+
 
 
 ###############################################################################
-# TODO: 3a.  Define a function immediately below this _TODO_.
+# Done: 3a.  Define a function immediately below this _TODO_.
 #   It takes two arguments that denote, for a right triangle,
 #   the lengths of the two sides adjacent to its right angle,
 #   and it returns the length of the hypotenuse of that triangle.
 #     HINT: Apply the Pythagorean theorem.
+import math
+def triangle(side1,side2):
+    hyp = math.sqrt((side1 ** 2)+(side2 ** 2))
+    print(hyp)
+    return(hyp)
+
+
+
+
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 3b.  In main, CALL your function and print the returned value,
+# Done: 3b.  In main, CALL your function and print the returned value,
 #   to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# Done: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
 #
+def Turtle(color,thickness):
+    window = rg.TurtleWindow()
+    turtle1 = rg.SimpleTurtle('turtle')
+    turtle1.pen = rg.Pen(color,1)
+    turtle1.forward(100)
+    turtle2 = rg.SimpleTurtle('turtle')
+    turtle2.pen = rg.Pen('red',thickness)
+    turtle2.backward(100)
+    window.close_on_mouse_click()
+
 #   The function should do the following (in the order listed):
 #     a. Constructs a TurtleWindow.
 #     b. Constructs two SimpleTurtles, where:
@@ -65,14 +84,14 @@ def main():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# Done: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
 ###############################################################################
-# TODO: 5.
+# Done: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
